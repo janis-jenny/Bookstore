@@ -59,6 +59,10 @@ To get a local copy up and running follow these simple steps:
 - Run npm install to install dependencies.
 - Run npm start build and start the server.
 - To run tests, run npm test.
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc186f0b73faa282b77ff8997c6135baf8a74128
 
 
 ## 👥 Author
