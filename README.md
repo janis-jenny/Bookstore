@@ -53,7 +53,12 @@ To get a local copy up and running follow these simple steps:
 
 - Go to the main page.
 - Press the "Code" button and get the repo link.
-- Clone it using git command "<you_repository_link>".
+- Clone it using git command `you_repository_link`.
+- Cd into the folder.
+- Go to the branch with git checkout `branch-name`.
+- Run npm install to install dependencies.
+- Run npm start build and start the server.
+- To run tests, run npm test.
 
 
 
