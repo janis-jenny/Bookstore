@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
-function BookList(props) {
+const BookList = (props) => {
   const { books } = props;
 
   const bookHtml = books.map((book) => {
@@ -22,7 +22,7 @@ function BookList(props) {
       </tr>
     </table>
   );
-}
+};
 
 const mapState = (state) => state;
 
