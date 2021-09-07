@@ -5,11 +5,6 @@ import Book from '../components/Book';
 const BookList = (props) => {
   const { books } = props;
 
-  const bookHtml = books.map((book) => {
-    const { id, title, category } = book;
-    return (<Book key={id} id={id} title={title} category={category} />);
-  });
-
   return (
     <table>
       <tr>
@@ -18,7 +13,7 @@ const BookList = (props) => {
         <th>Category</th>
       </tr>
       <tr>
-        {bookHtml}
+        {books.map((book) => (<Book key={book.id} book={book} />)) }
       </tr>
     </table>
   );
