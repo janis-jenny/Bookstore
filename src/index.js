@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import reducerBook from './reducers/books';
+import rootReducer from './reducers/index';
 
 const arrayIds = [];
 const createUniqueId = () => {
@@ -36,7 +36,7 @@ const firstState = {
   ],
 };
 
-const store = createStore(reducerBook, firstState);
+const store = createStore(rootReducer, firstState);
 
 ReactDOM.render(
   <React.StrictMode>
