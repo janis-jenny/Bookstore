@@ -1,17 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import rootReducer from './reducers/index';
+
+const arrayIds = [];
+const createUniqueId = () => {
+  const someId = Math.floor(Math.random() * 1000);
+  if (!arrayIds.includes(someId)) {
+    arrayIds.push(someId);
+    return someId;
+  }
+  return createUniqueId();
+};
+
+const firstState = {
+  books: [{
+    id: createUniqueId(),
+    title: 'Game of Thrones',
+    category: 'Action',
+  },
+  {
+    id: createUniqueId(),
+    title: 'Dracula',
+    category: 'Horror',
+  },
+  {
+    id: createUniqueId(),
+    title: 'The Old Guard',
+    category: 'Sci-Fi',
+  },
+  ],
+};
+
+const store = createStore(rootReducer, firstState);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

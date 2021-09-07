@@ -61,7 +61,6 @@ To get a local copy up and running follow these simple steps:
 - To run tests, run npm test.
 
 
-
 ## 👥 Author
 
 👤 **Jenny Cárdenas**
