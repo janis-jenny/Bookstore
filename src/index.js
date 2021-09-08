@@ -5,17 +5,8 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import rootReducer from './reducers/index';
-
-const arrayIds = [];
-const createUniqueId = () => {
-  const someId = Math.floor(Math.random() * 1000);
-  if (!arrayIds.includes(someId)) {
-    arrayIds.push(someId);
-    return someId;
-  }
-  return createUniqueId();
-};
+import reducerBooks from './reducers/books';
+import { createUniqueId } from './containers/Bookform';
 
 const firstState = {
   books: [{
@@ -36,7 +27,7 @@ const firstState = {
   ],
 };
 
-const store = createStore(rootReducer, firstState);
+const store = createStore(reducerBooks, firstState);
 
 ReactDOM.render(
   <React.StrictMode>
