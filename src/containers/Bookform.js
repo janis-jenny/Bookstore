@@ -27,8 +27,8 @@ const categories = () => {
 };
 
 const BookForm = (props) => {
-  const [title, setTitle] = useState();
-  const [category, setCategory] = useState();
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
   const options = categories();
 
   const handleChange = (e) => {
