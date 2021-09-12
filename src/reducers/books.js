@@ -1,11 +1,15 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
+/* eslint-disable no-console */
+const CREATEBOOK = 'CREATE_BOOK';
+const REMOVEBOOK = 'REMOVE_BOOK';
 
 const reducerBooks = (state, action) => {
-  const newBooks = [...state.books];
+  console.log('AQUI');
+  console.log(action.type);
+  console.log(action.payload);
   switch (action.type) {
-    case CREATE_BOOK:
-      return { ...state, books: newBooks.concat(action.payload) };
-    case REMOVE_BOOK:
+    case CREATEBOOK:
+      return { books: [...state.books, action.payload] };
+    case REMOVEBOOK:
       return [
         ...state.slice(0, action.payload),
         ...state.slice(action.payload + 1, state.length),

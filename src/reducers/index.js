@@ -1,4 +1,4 @@
-import Redux from 'redux';
+/* import Redux from 'redux';
 import reducerBooks from './books';
 
 const rootReducer = Redux.combineReducers({
@@ -6,3 +6,4 @@ const rootReducer = Redux.combineReducers({
 });
 
 export default rootReducer;
+ */

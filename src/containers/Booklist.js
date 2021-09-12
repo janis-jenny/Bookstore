@@ -1,14 +1,21 @@
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+/* eslint-disable no-console */
+import React from 'react';
+import { useStore, useDispatch } from 'react-redux';
 import Book from '../components/Book';
 import REMOVE_BOOK from '../reducers/books';
 
-const BookList = (props) => {
-  const { books, removebook } = props;
+const BookList = () => {
+  const store = useStore();
+  const dispatch = useDispatch();
+  const { books } = store.getState();
+  const booksList = books;
+  console.log('STORE');
+  console.log(books);
+  console.log(booksList);
 
   const handleRemoveBook = (book) => {
     const bookDelete = books.find((bookDel) => book.id === bookDel.id);
-    removebook(bookDelete);
+    dispatch(REMOVE_BOOK(bookDelete));
   };
 
   return (
@@ -22,7 +29,7 @@ const BookList = (props) => {
       </thead>
       <tbody>
         <tr>
-          {books.map((book) => (
+          {booksList.map((book) => (
             <Book
               key={book.id}
               book={book}
@@ -35,14 +42,4 @@ const BookList = (props) => {
   );
 };
 
-const mapState = (state) => state;
-const mapDispatch = (dispatch) => ({
-  removebook: (book) => dispatch(REMOVE_BOOK(book)),
-});
-
-BookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired,
-  removebook: PropTypes.func.isRequired,
-};
-
-export default connect(mapState, mapDispatch)(BookList);
+export default BookList;

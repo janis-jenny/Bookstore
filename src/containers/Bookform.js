@@ -1,7 +1,7 @@
+/* eslint-disable no-console */
 import { useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
+import { useDispatch } from 'react-redux';
+import * as actions from '../actions/index';
 
 export const arrayIds = [];
 export const createUniqueId = () => {
@@ -26,12 +26,14 @@ const categories = () => {
   return options;
 };
 
-const BookForm = (props) => {
+const BookForm = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const options = categories();
 
   const handleChange = (e) => {
+    e.preventDefault();
     if (e.target.id === 'title') {
       setTitle(e.target.value);
     } else {
@@ -40,16 +42,19 @@ const BookForm = (props) => {
   };
 
   const handleSubmit = (e) => {
+    console.log('hereee');
+    console.log(handleSubmit);
+    console.log('dispatch');
+    console.log(dispatch);
     e.preventDefault();
-
     const book = {
       id: createUniqueId(),
       title,
       category,
     };
-
-    const { createbook } = props;
-    createbook(book);
+    console.log('dispatch');
+    console.log(book);
+    dispatch(actions.CREATEBOOK(book));
 
     setTitle('');
     setCategory('');
@@ -66,13 +71,4 @@ const BookForm = (props) => {
   );
 };
 
-BookForm.propTypes = {
-  createbook: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  createbook: (book) => dispatch(CREATE_BOOK(book)),
-  removebook: (book) => dispatch(REMOVE_BOOK(book)),
-});
-
-export default connect(null, mapDispatchToProps)(BookForm);
+export default BookForm;
