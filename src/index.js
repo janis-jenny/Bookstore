@@ -1,6 +1,3 @@
-/* eslint-disable no-sequences */
-/* eslint-disable no-console */
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';

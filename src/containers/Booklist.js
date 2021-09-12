@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { useStore, useDispatch } from 'react-redux';
 import Book from '../components/Book';
@@ -9,9 +8,6 @@ const BookList = () => {
   const dispatch = useDispatch();
   const { books } = store.getState();
   const booksList = books;
-  console.log('STORE');
-  console.log(books);
-  console.log(booksList);
 
   const handleRemoveBook = (book) => {
     const bookDelete = books.find((bookDel) => book.id === bookDel.id);
