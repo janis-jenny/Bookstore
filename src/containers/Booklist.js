@@ -2,7 +2,7 @@
 import React from 'react';
 import { useStore, useDispatch } from 'react-redux';
 import Book from '../components/Book';
-import REMOVE_BOOK from '../reducers/books';
+import * as actions from '../actions/index';
 
 const BookList = () => {
   const store = useStore();
@@ -15,8 +15,22 @@ const BookList = () => {
 
   const handleRemoveBook = (book) => {
     const bookDelete = books.find((bookDel) => book.id === bookDel.id);
-    dispatch(REMOVE_BOOK(bookDelete));
+    dispatch(actions.REMOVEBOOK(bookDelete));
   };
+
+  const booksHtml = booksList.map((book) => {
+    const { id, title, category } = book;
+    return (
+      <Book
+        key={id}
+        id={id}
+        title={title}
+        category={category}
+        clickhandler={handleRemoveBook}
+        book={book}
+      />
+    );
+  });
 
   return (
     <table>
@@ -29,13 +43,7 @@ const BookList = () => {
       </thead>
       <tbody>
         <tr>
-          {booksList.map((book) => (
-            <Book
-              key={book.id}
-              book={book}
-              clickhandler={handleRemoveBook}
-            />
-          )) }
+          {booksHtml}
         </tr>
       </tbody>
     </table>
