@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as actions from '../actions/index';
@@ -13,24 +12,12 @@ export const createUniqueId = () => {
   return createUniqueId();
 };
 
-const categories = () => {
-  const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-  const options = CATEGORIES.map((category) => (
-    <option
-      key={CATEGORIES.indexOf(category)}
-      value={category}
-    >
-      {category}
-    </option>
-  ));
-  return options;
-};
+const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
 const BookForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
-  const options = categories();
+  const [category, setCategory] = useState(CATEGORIES[0]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -42,8 +29,6 @@ const BookForm = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log('dispatch1');
-    console.log(dispatch);
     e.preventDefault();
     const book = {
       id: createUniqueId(),
@@ -51,19 +36,17 @@ const BookForm = () => {
       category,
     };
 
-    console.log('dispatch2');
-    console.log(book);
     dispatch(actions.createBookAction(book));
 
     setTitle('');
-    setCategory('');
+    setCategory(CATEGORIES[0]);
   };
 
   return (
     <form>
       <input onChange={handleChange} name="title" id="title" type="text" value={title} placeholder="Type the book title" />
       <select id="category" onChange={handleChange} value={category}>
-        {options}
+        {CATEGORIES.map((x) => <option key={x}>{x}</option>)}
       </select>
       <button onClick={handleSubmit} type="submit">Submit</button>
     </form>
