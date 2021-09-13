@@ -23,6 +23,7 @@ const firstState = {
     category: 'Sci-Fi',
   },
   ],
+  filter: 'All',
 };
 
 const store = createStore(reducerBooks, firstState);
