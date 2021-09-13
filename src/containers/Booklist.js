@@ -1,28 +1,23 @@
+/* eslint-disable no-console */
 import React from 'react';
-import { useStore, useDispatch } from 'react-redux';
+import { useStore } from 'react-redux';
 import Book from '../components/Book';
-import * as actions from '../actions/index';
 
 const BookList = () => {
   const store = useStore();
-  const dispatch = useDispatch();
   const { books } = store.getState();
-  const booksList = books;
 
-  const handleRemoveBook = (book) => {
-    const bookDelete = books.find((bookDel) => book.id === bookDel.id);
-    dispatch(actions.REMOVEBOOK(bookDelete));
-  };
+  console.log('STORE');
+  console.log(store);
+  console.log(books);
 
-  const booksHtml = booksList.map((book) => {
-    const { id, title, category } = book;
+  const booksHtml = books.map((book) => {
+    console.log('display!');
+    console.log(book);
     return (
       <Book
-        key={id}
-        id={id}
-        title={title}
-        category={category}
-        clickhandler={handleRemoveBook}
+        key={book.id}
+        id={book.id}
         book={book}
       />
     );
@@ -38,9 +33,7 @@ const BookList = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          {booksHtml}
-        </tr>
+        {booksHtml}
       </tbody>
     </table>
   );

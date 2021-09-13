@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as actions from '../actions/index';
@@ -41,6 +42,8 @@ const BookForm = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log('dispatch1');
+    console.log(dispatch);
     e.preventDefault();
     const book = {
       id: createUniqueId(),
@@ -48,7 +51,9 @@ const BookForm = () => {
       category,
     };
 
-    dispatch(actions.CREATEBOOK(book));
+    console.log('dispatch2');
+    console.log(book);
+    dispatch(actions.createBookAction(book));
 
     setTitle('');
     setCategory('');

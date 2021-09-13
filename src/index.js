@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
@@ -29,13 +30,18 @@ const firstState = {
 
 const store = createStore(reducerBooks, firstState);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+const testRender = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root'),
+  );
+};
 
+store.subscribe(testRender);
+
+testRender();
 reportWebVitals();
