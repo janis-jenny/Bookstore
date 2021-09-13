@@ -2,16 +2,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as actions from '../actions/index';
 
-export const arrayIds = [];
-export const createUniqueId = () => {
-  const someId = Math.floor(Math.random() * 1000);
-  if (!arrayIds.includes(someId)) {
-    arrayIds.push(someId);
-    return someId;
-  }
-  return createUniqueId();
-};
-
 const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
 const BookForm = () => {
@@ -31,7 +21,7 @@ const BookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const book = {
-      id: createUniqueId(),
+      id: Math.floor(Math.random() * 1000) + 1,
       title,
       category,
     };
