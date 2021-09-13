@@ -4,47 +4,40 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
-import reportWebVitals from './reportWebVitals';
-import rootReducer from './reducers/index';
-
-const arrayIds = [];
-const createUniqueId = () => {
-  const someId = Math.floor(Math.random() * 1000);
-  if (!arrayIds.includes(someId)) {
-    arrayIds.push(someId);
-    return someId;
-  }
-  return createUniqueId();
-};
+import reducerBooks from './reducers/books';
 
 const firstState = {
   books: [{
-    id: createUniqueId(),
+    id: Math.floor(Math.random() * 1000) + 1,
     title: 'Game of Thrones',
     category: 'Action',
   },
   {
-    id: createUniqueId(),
+    id: Math.floor(Math.random() * 1000) + 1,
     title: 'Dracula',
     category: 'Horror',
   },
   {
-    id: createUniqueId(),
+    id: Math.floor(Math.random() * 1000) + 1,
     title: 'The Old Guard',
     category: 'Sci-Fi',
   },
   ],
 };
 
-const store = createStore(rootReducer, firstState);
+const store = createStore(reducerBooks, firstState);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+const testRender = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root'),
+  );
+};
 
-reportWebVitals();
+store.subscribe(testRender);
+
+testRender();

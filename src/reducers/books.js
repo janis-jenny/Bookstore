@@ -4,12 +4,14 @@ const reducerBooks = (state, action) => {
   const newBooks = [...state.books];
   switch (action.type) {
     case CREATE_BOOK:
-      return { ...state, books: newBooks.concat(action.payload) };
+      return {
+        ...state,
+        books: newBooks.concat(action.payload),
+      };
     case REMOVE_BOOK:
-      return [
-        ...state.slice(0, action.payload),
-        ...state.slice(action.payload + 1, state.length),
-      ];
+      return {
+        books: newBooks.filter((obj) => obj.id !== action.payload),
+      };
     default:
       return state;
   }

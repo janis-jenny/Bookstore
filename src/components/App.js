@@ -1,10 +1,10 @@
-import BooksList from '../containers/Booklist';
-import BooksForm from '../containers/Bookform';
+import BookList from '../containers/Booklist';
+import BookForm from '../containers/Bookform';
 
 const App = () => (
   <div>
-    <BooksForm />
-    <BooksList />
+    <BookForm />
+    <BookList />
   </div>
 );
 
