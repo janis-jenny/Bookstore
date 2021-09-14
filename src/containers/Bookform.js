@@ -18,8 +18,7 @@ const BookForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const book = {
       id: Math.floor(Math.random() * 1000) + 1,
       title,

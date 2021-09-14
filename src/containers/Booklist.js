@@ -7,21 +7,20 @@ import CategoryFilter from '../components/CategoryFilter';
 const BookList = () => {
   const store = useStore();
   const { books } = store.getState();
+  let filterBooks = books;
   const dispatch = useDispatch();
-  const [category, setCategory] = useState([]);
+  const [category, setCategory] = useState('All');
 
   const handleFilterChange = (e) => {
     setCategory(e.target.value);
     dispatch(actions.filterBookAction(e.target.value));
   };
 
-  const filterBooksByCategory = () => {
-    if (category === 'All') return books;
-    return books.filter((book) => book.category === category);
-  };
+  if (category !== 'All') {
+    filterBooks = books.filter((book) => book.category === category);
+  }
 
-  const booksToDisplay = filterBooksByCategory();
-  const booksHtml = booksToDisplay.map((book) => (
+  const booksHtml = filterBooks.map((book) => (
     <Book
       key={book.id}
       id={book.id}
