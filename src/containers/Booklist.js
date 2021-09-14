@@ -15,11 +15,13 @@ const BookList = () => {
     dispatch(actions.filterBookAction(e.target.value));
   };
 
-  /*  if (category !== 'All') {
-    books.filter((book) => book.category === category);
-  }
- */
-  const booksHtml = books.map((book) => (
+  const filterBooksByCategory = () => {
+    if (category === 'All') return books;
+    return books.filter((book) => book.category === category);
+  };
+
+  const booksToDisplay = filterBooksByCategory();
+  const booksHtml = booksToDisplay.map((book) => (
     <Book
       key={book.id}
       id={book.id}
