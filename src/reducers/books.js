@@ -18,22 +18,11 @@ const firstState = [{
 
 const reducerBooks = (state = firstState, action) => {
   const { type, payload: book } = action;
-  const newBooks = [...state];
   switch (type) {
     case CREATE_BOOK:
-      return {
-        ...state,
-        books: newBooks.concat(book),
-      };
+      return [...state, action.payload];
     case REMOVE_BOOK:
-      return {
-        books: newBooks.filter((obj) => obj.id !== book),
-      };
-      /*     case CHANGE_FILTER:
-      return {
-        filter: action.payload,
-        books: newBooks,
-      }; */
+      return [...state].filter((obj) => obj.id !== book);
     default:
       return state;
   }

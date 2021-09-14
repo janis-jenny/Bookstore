@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useStore, useDispatch } from 'react-redux';
 import Book from '../components/Book';
@@ -7,7 +8,6 @@ import CategoryFilter from '../components/CategoryFilter';
 const BookList = () => {
   const store = useStore();
   const { books } = store.getState();
-  let filterBooks = books;
   const dispatch = useDispatch();
   const [category, setCategory] = useState('All');
 
@@ -16,17 +16,15 @@ const BookList = () => {
     dispatch(actions.filterBookAction(e.target.value));
   };
 
-  if (category !== 'All') {
-    filterBooks = books.filter((book) => book.category === category);
-  }
-
-  const booksHtml = filterBooks.map((book) => (
-    <Book
-      key={book.id}
-      id={book.id}
-      book={book}
-    />
-  ));
+  const booksFilter = () => {
+    let list;
+    if (category === 'All') {
+      list = books;
+    } else {
+      list = books.filter((book) => book.category === category);
+    }
+    return list;
+  };
 
   return (
     <>
@@ -40,7 +38,13 @@ const BookList = () => {
           </tr>
         </thead>
         <tbody>
-          {booksHtml}
+          {booksFilter().map((book) => (
+            <Book
+              key={book.id}
+              id={book.id}
+              book={book}
+            />
+          ))}
         </tbody>
       </table>
     </>

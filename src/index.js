@@ -6,25 +6,21 @@ import './index.css';
 import App from './components/App';
 import rootReducer from './reducers/index';
 
-const firstState = {
-  books: [{
-    id: Math.floor(Math.random() * 1000) + 1,
-    title: 'Game of Thrones',
-    category: 'Action',
-  },
-  {
-    id: Math.floor(Math.random() * 1000) + 1,
-    title: 'Dracula',
-    category: 'Horror',
-  },
-  {
-    id: Math.floor(Math.random() * 1000) + 1,
-    title: 'The Old Guard',
-    category: 'Sci-Fi',
-  },
-  ],
-  filter: 'All',
-};
+const firstState = [{
+  id: Math.floor(Math.random() * 1000) + 1,
+  title: 'Game of Thrones',
+  category: 'Action',
+},
+{
+  id: Math.floor(Math.random() * 1000) + 1,
+  title: 'Dracula',
+  category: 'Horror',
+},
+{
+  id: Math.floor(Math.random() * 1000) + 1,
+  title: 'The Old Guard',
+  category: 'Sci-Fi',
+}];
 
 const store = createStore(rootReducer, firstState);
 
