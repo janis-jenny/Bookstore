@@ -1,4 +1,4 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } from '../actions/index';
 
 const reducerBooks = (state, action) => {
   const newBooks = [...state.books];
@@ -11,6 +11,11 @@ const reducerBooks = (state, action) => {
     case REMOVE_BOOK:
       return {
         books: newBooks.filter((obj) => obj.id !== action.payload),
+      };
+    case CHANGE_FILTER:
+      return {
+        filter: action.payload,
+        books: newBooks,
       };
     default:
       return state;

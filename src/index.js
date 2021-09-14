@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
-import rootReducer from './reducers/index';
+import reducerBooks from './reducers/books';
 
 const firstState = {
   books: [{
@@ -26,7 +26,7 @@ const firstState = {
   filter: 'All',
 };
 
-const store = createStore(rootReducer, firstState);
+const store = createStore(reducerBooks, firstState);
 
 const testRender = () => {
   ReactDOM.render(

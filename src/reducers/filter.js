@@ -1,4 +1,4 @@
-import { CHANGE_FILTER } from '../actions/index';
+/* import { CHANGE_FILTER } from '../actions/index';
 
 const filterReducer = (state = 'All', action) => {
   switch (action.type) {
@@ -11,4 +11,4 @@ const filterReducer = (state = 'All', action) => {
   }
 };
 
-export default filterReducer;
+export default filterReducer; */
