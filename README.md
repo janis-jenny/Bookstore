@@ -27,7 +27,7 @@
 
 ## 👩🏼‍💻 About Calculator
 
-<!-- ![screenshot]() -->
+![screenshot](./src/assets/bookstore.jpg)
 
 <hr>
 
