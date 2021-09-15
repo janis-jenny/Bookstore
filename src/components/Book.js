@@ -32,7 +32,9 @@ const Book = ({ book: { id, title, category } }) => {
           <li className={bookLinks}>Author Name</li>
         </ul>
         <ul className={`${displayFlex} ${alignCenter}`}>
-          <li className={bookLinks}>Comments</li>
+          <li className={bookLinks}>
+            Comments
+          </li>
           <li className={bookLinks}>
             <button
               className={`${removeBook} ${bookLinks}`}
@@ -44,7 +46,9 @@ const Book = ({ book: { id, title, category } }) => {
               Remove book
             </button>
           </li>
-          <li className={bookLinks}>Edit</li>
+          <li className={bookLinks}>
+            Edit
+          </li>
         </ul>
       </div>
       <Progress />

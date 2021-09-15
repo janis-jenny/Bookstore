@@ -21,18 +21,19 @@
   background-color: #fff;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 27px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding: 24px 35px;
+  margin: 16px 68px;
   border: 1px solid #e8e8e8;
 }
 
 .bookCategory {
+  padding-bottom: 10px; 
   font-weight: 600;
   color: #8b8b8b;
 }
 
 .bookTitle {
+  padding-bottom: 6px; 
   font-weight: 600;
   font-size: 22px;
 }
@@ -41,7 +42,7 @@
   font-size: 15px;
   color: #4386bf;
   font-weight: 100;
-  margin-right: 10px;
+  margin-right: 9px;
 }
 
 .removeBook {
@@ -59,6 +60,7 @@
 }
 
 .chapterTitle {
+  margin-bottom: 6px; 
   color: #8b8b8b;
 }
 

@@ -11,24 +11,27 @@
 }
 
 .input {
-  padding: 13px 17px;
+  padding: 13px 26px;
   font-size: 18px;
   color: #888;
   border: 1px solid #888;
   outline: none;
   background-color: #fff;
   border-radius: 4px;
-  margin-right: 40px;
+  margin-right: 28px;
 }
 
 .addTitle {
-  width: 450px;
+  width: 540px;
 }
 
 .addTitleBtn {
-  padding: 18px 90px;
+  padding: 17px 75px;
 }
 
 .form {
-  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 55px;
+  margin: 16px 22px;
 }
