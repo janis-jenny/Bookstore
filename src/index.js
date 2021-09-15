@@ -4,28 +4,25 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
-import reducerBooks from './reducers/books';
+import rootReducer from './reducers/index';
 
-const firstState = {
-  books: [{
-    id: Math.floor(Math.random() * 1000) + 1,
-    title: 'Game of Thrones',
-    category: 'Action',
-  },
-  {
-    id: Math.floor(Math.random() * 1000) + 1,
-    title: 'Dracula',
-    category: 'Horror',
-  },
-  {
-    id: Math.floor(Math.random() * 1000) + 1,
-    title: 'The Old Guard',
-    category: 'Sci-Fi',
-  },
-  ],
-};
+const firstState = [{
+  id: Math.floor(Math.random() * 1000) + 1,
+  title: 'Game of Thrones',
+  category: 'Action',
+},
+{
+  id: Math.floor(Math.random() * 1000) + 1,
+  title: 'Dracula',
+  category: 'Horror',
+},
+{
+  id: Math.floor(Math.random() * 1000) + 1,
+  title: 'The Old Guard',
+  category: 'Sci-Fi',
+}];
 
-const store = createStore(reducerBooks, firstState);
+const store = createStore(rootReducer, firstState);
 
 const testRender = () => {
   ReactDOM.render(
