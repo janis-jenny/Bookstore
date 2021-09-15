@@ -12,6 +12,7 @@ const {
   bookCategory,
   bookTitle,
   bookLinks,
+  comments,
   removeBook,
   alignCenter,
 } = bookStyles;
@@ -32,7 +33,7 @@ const Book = ({ book: { id, title, category } }) => {
           <li className={bookLinks}>Author Name</li>
         </ul>
         <ul className={`${displayFlex} ${alignCenter}`}>
-          <li className={bookLinks}>
+          <li className={comments}>
             Comments
           </li>
           <li className={bookLinks}>

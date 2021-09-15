@@ -22,18 +22,21 @@
 }
 
 .addTitle {
-  width: 540px;
+  width: 55%;
 }
 
 .addTitleBtn {
-  padding: 17px 75px;
+  padding: 0 9rem;
+  margin: 3rem 1rem;
+  font-size: 1.5rem;
+  height: 3rem;
 }
 
 .form {
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 24px 55px;
-  margin: 16px 22px;
+  padding: 2rem 0rem;
+  margin: 3rem 6rem 2rem 7.6rem;
 }
 
 .inputFilter {
@@ -44,5 +47,5 @@
   outline: none;
   background-color: #fff;
   border-radius: 4px;
-  margin: 16px 48px 6px 68px;
+  margin: 2rem 4rem 1.5rem 4rem;
 }

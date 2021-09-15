@@ -2,12 +2,12 @@ import progress from '../assets/progress.png';
 import * as bookStyles from '../style/Book.module.css';
 
 const {
-  displayFlex, completionPercentage, alignCenter, completed,
+  displayFlex, progressDiv, completionPercentage, alignCenter, completed,
 } = bookStyles;
 
 export default function Progress() {
   return (
-    <div className={`${displayFlex} ${alignCenter}`}>
+    <div className={`${displayFlex} ${alignCenter} ${progressDiv}`}>
       <div>
         <img alt="book reading progress" src={progress} />
       </div>

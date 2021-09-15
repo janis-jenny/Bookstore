@@ -48,7 +48,7 @@ const BookForm = () => {
           <option selected disabled>Choose Book Category</option>
           {CATEGORIES.map((x) => <option key={x}>{x}</option>)}
         </select>
-        <button className={`${updateProgress} ${addTitleBtn}`} onClick={handleSubmit} type="submit">Submit</button>
+        <button className={`${updateProgress} ${addTitleBtn}`} onClick={handleSubmit} type="submit">Add Book</button>
       </form>
     </div>
   );

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding-left: 100px;
+  padding: 1rem 2rem 0.5rem 7rem;
   border-bottom: 2px solid #e8e8e8;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 36px;
   color: #0290ff;
   margin-right: 47px;
 }
@@ -21,10 +21,11 @@
 .navLinks {
   list-style: none;
   display: flex;
-  width: 30%;
+  width: 28%;
   justify-content: space-between;
   align-items: center;
-  font-size: 13px;
+  font-size: 1rem;
+  padding-top: 0.5rem;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -37,5 +38,6 @@
 }
 
 .userAvatar {
-  margin-right: 100px;
+  margin-right: 6rem;
+  height: 3rem;
 }
