@@ -1,11 +1,15 @@
 import BookList from '../containers/Booklist';
 import BookForm from '../containers/Bookform';
+import Navbar from './Navbar';
 
 const App = () => (
-  <div>
-    <BookForm />
-    <BookList />
-  </div>
+  <>
+    <Navbar />
+    <div>
+      <BookForm />
+      <BookList />
+    </div>
+  </>
 );
 
 export default App;

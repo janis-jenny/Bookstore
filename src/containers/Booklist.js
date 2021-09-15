@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useStore, useDispatch } from 'react-redux';
 import Book from '../components/Book';
