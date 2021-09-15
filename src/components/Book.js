@@ -26,7 +26,7 @@ const Book = ({ book: { id, title, category } }) => {
   return (
     <div className={`${bookContainer} ${displayFlex}`}>
       <div>
-        <ul>
+        <ul key={id}>
           <li className={bookCategory}>{category}</li>
           <li className={bookTitle}>{title}</li>
           <li className={bookLinks}>Author Name</li>

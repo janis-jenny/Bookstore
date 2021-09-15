@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as actions from '../actions/index';
+import * as formStyles from '../style/BookForm.module.css';
+import { updateProgress } from '../style/Book.module.css';
+
+const {
+  horizontalRule, header, input, addTitle, addTitleBtn, form,
+} = formStyles;
 
 export const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
@@ -33,13 +39,18 @@ const BookForm = () => {
   };
 
   return (
-    <form>
-      <input onChange={handleChange} name="title" id="title" type="text" value={title} placeholder="Type the book title" />
-      <select id="category" onChange={handleChange} value={category}>
-        {CATEGORIES.map((x) => <option key={x}>{x}</option>)}
-      </select>
-      <button onClick={handleSubmit} type="submit">Submit</button>
-    </form>
+    <div className={form}>
+      <hr className={horizontalRule} />
+      <h1 className={header}>ADD NEW BOOK</h1>
+      <form>
+        <input className={`${input} ${addTitle}`} onChange={handleChange} name="title" id="title" type="text" value={title} placeholder="Type the book title" />
+        <select onChange={handleChange} value={category} className={input}>
+          <option selected disabled>Choose Book Category</option>
+          {CATEGORIES.map((x) => <option key={x}>{x}</option>)}
+        </select>
+        <button className={`${updateProgress} ${addTitleBtn}`} onClick={handleSubmit} type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 

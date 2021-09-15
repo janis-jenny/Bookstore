@@ -3,13 +3,13 @@ import BookForm from '../containers/Bookform';
 import Navbar from './Navbar';
 
 const App = () => (
-  <>
+  <div>
     <Navbar />
     <div>
-      <BookForm />
       <BookList />
+      <BookForm />
     </div>
-  </>
+  </div>
 );
 
 export default App;
