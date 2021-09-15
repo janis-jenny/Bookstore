@@ -5,7 +5,7 @@ import * as formStyles from '../style/BookForm.module.css';
 import { updateProgress } from '../style/Book.module.css';
 
 const {
-  horizontalRule, header, input, addTitle, addTitleBtn, form,
+  horizontalRule, header, input, addTitle, inputSelect, addTitleBtn, form,
 } = formStyles;
 
 export const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
@@ -44,7 +44,7 @@ const BookForm = () => {
       <h1 className={header}>ADD NEW BOOK</h1>
       <form>
         <input className={`${input} ${addTitle}`} onChange={handleChange} name="title" id="title" type="text" value={title} placeholder="Type the book title" />
-        <select onChange={handleChange} value={category} className={input}>
+        <select onChange={handleChange} value={category} className={`${input} ${inputSelect}`}>
           <option selected disabled>Choose Book Category</option>
           {CATEGORIES.map((x) => <option key={x}>{x}</option>)}
         </select>
