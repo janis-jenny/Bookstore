@@ -1,4 +1,4 @@
-import * as bookStyles from '../styles/Book.module.css';
+import * as bookStyles from '../style/Book.module.css';
 
 const { chapter, chapterTitle, updateProgress } = bookStyles;
 

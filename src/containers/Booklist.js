@@ -26,27 +26,18 @@ const BookList = () => {
   };
 
   return (
-    <>
+    <div>
       <CategoryFilter callback={handleFilterChange} value={category} />
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {booksFilter().map((book) => (
-            <Book
-              key={book.id}
-              id={book.id}
-              book={book}
-            />
-          ))}
-        </tbody>
-      </table>
-    </>
+      <div>
+        {booksFilter().map((book) => (
+          <Book
+            key={book.id}
+            id={book.id}
+            book={book}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
