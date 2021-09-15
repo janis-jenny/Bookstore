@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { inputFilter } from '../style/BookForm.module.css';
 
 const CategoryFilter = (props) => {
   const { callback, value } = props;
@@ -14,14 +15,9 @@ const CategoryFilter = (props) => {
     'Sci-Fi',
   ];
   return (
-    <>
-      <div>
-        Filter books by category:
-      </div>
-      <select id="category" onChange={callback} value={value}>
-        {categories.map((item) => <option key={item}>{item}</option>)}
-      </select>
-    </>
+    <select className={inputFilter} onChange={callback} value={value}>
+      {categories.map((item) => <option key={item}>{item}</option>)}
+    </select>
   );
 };
 

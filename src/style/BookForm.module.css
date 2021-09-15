@@ -35,3 +35,14 @@
   padding: 24px 55px;
   margin: 16px 22px;
 }
+
+.inputFilter {
+  padding: 13px 36px;
+  font-size: 18px;
+  color: #888;
+  border: 1px solid #888;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 16px 48px 6px 68px;
+}
