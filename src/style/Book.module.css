@@ -1,0 +1,90 @@
+.displayFlex {
+  display: flex;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.progressDiv {
+  position: absolute;
+  right: 40%;
+}
+
+.bookTitle,
+.bookLinks,
+.chapter {
+  font-family: 'Roboto', sans-serif;
+}
+
+.chapter {
+  padding-right: 6rem;
+}
+
+.bookCategory,
+.completionPercentage {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bookContainer {
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 35px;
+  margin: 1rem 7rem;
+  border: 1px solid #e8e8e8;
+}
+
+.bookCategory {
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: #8b8b8b;
+}
+
+.bookTitle {
+  padding-bottom: 6px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.bookLinks {
+  font-size: 15px;
+  color: #4386bf;
+  font-weight: 100;
+  margin-right: 0.7rem;
+}
+
+.comments {
+  font-size: 15px;
+  color: #4386bf;
+  font-weight: 100;
+  margin-right: 1.5rem;
+}
+
+.removeBook {
+  background-color: #fff;
+  border: none;
+  padding: 0;
+}
+
+.completionPercentage {
+  font-size: 32px;
+}
+
+.completed {
+  color: #8b8b8b;
+  font-size: 15px;
+}
+
+.chapterTitle {
+  margin-bottom: 6px;
+  color: #8b8b8b;
+}
+
+.updateProgress {
+  background-color: #4386bf;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+}

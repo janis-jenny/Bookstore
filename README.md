@@ -25,9 +25,9 @@
 
 
 
-## 👩🏼‍💻 About Calculator
+## 👩🏼‍💻 About Bookstore
 
-<!-- ![screenshot]() -->
+![screenshot](./src/assets/bookstore.jpg)
 
 <hr>
 
@@ -41,6 +41,7 @@
 ## 🔧 Built With
 
 - React
+- Redux
 - HTML5
 - CSS3
 - JS (ES6)

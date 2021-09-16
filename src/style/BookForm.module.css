@@ -1,0 +1,58 @@
+.horizontalRule {
+  height: 2px;
+  background-color: #e8e8e8;
+  border: none;
+}
+
+.header {
+  font-family: 'MontSerrat', sans-serif;
+  color: #888;
+  font-size: 20px;
+  padding-top: 1.2rem;
+}
+
+.input {
+  padding: 13px 26px;
+  font-size: 18px;
+  color: #888;
+  border: 1px solid #888;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-right: 23px;
+}
+
+.addTitle {
+  min-width: 45%;
+}
+
+.addTitleBtn {
+  padding: 0 2.8em;
+  font-size: 1rem;
+  height: 3rem;
+  width: 20%;
+}
+
+.inputSelect {
+  max-width: 22%;
+}
+
+.form {
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.2rem 5rem;
+  margin: 1.5rem 2rem 2rem 2rem;
+}
+
+.inputFilter {
+  padding: 13px 36px;
+  font-size: 18px;
+  color: #888;
+  border: 1px solid #888;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 2rem 4rem 1.5rem 4rem;
+  position: relative;
+  left: 3%;
+}
