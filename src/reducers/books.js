@@ -20,7 +20,7 @@ const reducerBooks = (state = firstState, action) => {
   const { type, payload: book } = action;
   switch (type) {
     case CREATE_BOOK:
-      return [...state, action.payload];
+      return [...state, book];
     case REMOVE_BOOK:
       return [...state].filter((obj) => obj.id !== book);
     default:
